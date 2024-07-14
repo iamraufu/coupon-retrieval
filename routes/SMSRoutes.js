@@ -3,10 +3,10 @@ const router = express.Router()
 
 const {
       sendSMS,
-      updateSMS
+      sendPromo
 } = require('../controllers/SMSController')
 
 router.post('/', sendSMS)
-router.patch('/', updateSMS)
+router.post('/promo', sendPromo)
 
 module.exports = router

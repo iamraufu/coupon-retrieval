@@ -6,6 +6,10 @@ const smsSchema = new mongoose.Schema({
             required: true,
             immutable: true
       },
+      otp: {
+            type: Number,
+            required: true,
+      },
       coupon: {
             type: String,
             required: true,
