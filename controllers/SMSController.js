@@ -46,7 +46,7 @@ const sendOTP = async (phone, otp, coupon) => {
 
 const sendPromo = async (req, res) => {
       const { phone, coupon } = req.body
-      const message = `সম্মানিত ক্রেতা, আপনার ইন্সট্যান্ট ডিসকাউন্ট কোড-টি হলো: ${coupon} *শ/প্র স্বপ্ন`
+      const message = `সম্মানিত ক্রেতা, আপনার ইন্সট্যান্ট ডিসকাউন্ট কোডটি হল: ${coupon} *শ/প্র স্বপ্ন`
 
       const smsUrl = `https://api.mobireach.com.bd/SendTextMessage?Username=shwapno&Password=Shw@pno@dhk2023&From=8801847170370&To=${phone}&Message=${message}`
       const response = await fetch(smsUrl)
