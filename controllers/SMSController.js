@@ -27,7 +27,7 @@ const sendSMS = async (req, res) => {
 }
 
 const sendOTP = async (phone, otp, coupon) => {
-      const message = `কোড: ${otp}`
+      const message = `(স্বপ্ন) আপনার ওটিপি: ${otp}`
 
       const smsUrl = `https://api.mobireach.com.bd/SendTextMessage?Username=shwapno&Password=Shw@pno@dhk2023&From=8801847170370&To=${phone}&Message=${message}`
       const response = await fetch(smsUrl)
@@ -46,7 +46,7 @@ const sendOTP = async (phone, otp, coupon) => {
 
 const sendPromo = async (req, res) => {
       const { phone, coupon } = req.body
-      const message = `সম্মানিত ক্রেতা, কুপন কোড: ${coupon} *শ/প্র স্বপ্ন`
+      const message = `সম্মানিত ক্রেতা, আপনার ইন্সট্যান্ট ডিসকাউন্ট কোড-টি হলো: ${coupon} *শ/প্র স্বপ্ন`
 
       const smsUrl = `https://api.mobireach.com.bd/SendTextMessage?Username=shwapno&Password=Shw@pno@dhk2023&From=8801847170370&To=${phone}&Message=${message}`
       const response = await fetch(smsUrl)
@@ -54,7 +54,7 @@ const sendPromo = async (req, res) => {
       if (response.status === 200) {
             await res.status(200).json({
                   status: true,
-                  message: `Promo Coupon Sent Successfully`
+                  message: `Coupon Code Sent`
             })
       }
 }
